@@ -33,9 +33,9 @@
                 <div class="col">
                     <h1 class="text-center">My List Items</h1>
                     <ul class="list-group">
-                        <li class="list-group-item" v-for="(todo, index) in todos"
-                            :class="{'no-done' : todos[index].done}"
-                            @click="toggleDone(index)">{{todos[index].text}} <button class="btn btn-danger" @click="removeItem(todo.text)">X</button>
+                        <li class="list-group-item d-flex justify-content-between align-items-center" v-for="(todo, index) in todos">
+                            <span :class="{'no-done' : todos[index].done}" @click="toggleDone(index)">{{todos[index].text}}</span> 
+                            <button class="btn btn-danger" @click="removeItem(index)">X</button>
                         </li>
                     </ul>
                     <div class="input-group mt-5">

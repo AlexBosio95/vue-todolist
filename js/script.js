@@ -24,7 +24,8 @@ const app = new Vue ({
     methods:{
 
         removeItem: function(currentItem) {
-            this.todos.splice(this.todos.indexOf({text: currentItem}))
+            console.log(currentItem)
+            this.todos.splice((currentItem), 1)
         },
     
         log(arg) {
@@ -46,7 +47,7 @@ const app = new Vue ({
         },
 
         toggleDone: function(currentDone) {
-            console.log(this.todos[currentDone].done)
+            // console.log(this.todos[currentDone].done)
             // if (this.todos[currentDone].done == false) {
             //     this.todos[currentDone].done = true
             // } else {

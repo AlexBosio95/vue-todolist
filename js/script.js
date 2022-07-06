@@ -4,7 +4,6 @@ const app = new Vue ({
         index: 0,
         currentItem: '',
         newItem: '',
-        isDone: false,
         todos: [
             {
                 text: 'Fare i compiti',
@@ -47,6 +46,7 @@ const app = new Vue ({
          
         }
 
-    }
+    },
+
 
 })

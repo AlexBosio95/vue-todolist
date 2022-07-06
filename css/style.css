@@ -2,6 +2,10 @@
     text-decoration: line-through;
 }
 
+.bg-done{
+    background-color:lightgreen;
+}
+
 ul li {
  cursor: pointer;
 }

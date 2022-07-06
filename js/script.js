@@ -27,10 +27,6 @@ const app = new Vue ({
             console.log(currentItem)
             this.todos.splice((currentItem), 1)
         },
-    
-        log(arg) {
-            console.log(arg)
-        },
 
         newItemToPush: function(itemToPush){
             if (this.newItem == '') {
@@ -43,18 +39,11 @@ const app = new Vue ({
                 
                 this.newItem = '';
             }
-
         },
 
-        toggleDone: function(currentDone) {
-            // console.log(this.todos[currentDone].done)
-            // if (this.todos[currentDone].done == false) {
-            //     this.todos[currentDone].done = true
-            // } else {
-            //     this.todos[currentDone].done = false
-            // }
+        toggleDone: function(currentItem) {
 
-            this.todos[currentDone].done = !this.todos[currentDone].done
+            this.todos[currentItem].done = !this.todos[currentItem].done
          
         }
 

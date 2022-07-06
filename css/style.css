@@ -1,3 +1,7 @@
 .no-done{
     text-decoration: line-through;
 }
+
+ul li {
+ cursor: pointer;
+}

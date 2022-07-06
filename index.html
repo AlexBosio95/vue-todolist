@@ -31,11 +31,12 @@
             <div class="row row-cols-3 mt-3">
                 <div class="col"></div>
                 <div class="col">
-                    <h1>My List Items</h1>
+                    <h1 class="text-center">My List Items</h1>
                     <ul class="list-group">
                         <li class="list-group-item" v-for="(todo, index) in todos"
-                            :class="{'no-done' : todos[index].done}">{{todos[index].text}} <button
-                                class="btn btn-danger" @click="removeItem(todo.text)">X</button></li>
+                            :class="{'no-done' : todos[index].done}"
+                            @click="toggleDone(index)">{{todos[index].text}} <button class="btn btn-danger" @click="removeItem(todo.text)">X</button>
+                        </li>
                     </ul>
                     <div class="input-group mt-5">
                         <input type="text" class="form-control" placeholder="New Item" aria-label="Username"

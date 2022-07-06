@@ -4,6 +4,7 @@ const app = new Vue ({
         index: 0,
         currentItem: '',
         newItem: '',
+        isDone: false,
         todos: [
             {
                 text: 'Fare i compiti',
@@ -31,14 +32,31 @@ const app = new Vue ({
         },
 
         newItemToPush: function(itemToPush){
-            this.todos.push({
-                text: itemToPush,
-                done: false
-            })
-            
-            this.newItem = '';
+            if (this.newItem == '') {
+                alert('Elemento non inserito')
+            } else {
+                this.todos.push({
+                    text: itemToPush,
+                    done: false
+                })
+                
+                this.newItem = '';
+            }
 
+        },
+
+        toggleDone: function(currentDone) {
+            console.log(this.todos[currentDone].done)
+            // if (this.todos[currentDone].done == false) {
+            //     this.todos[currentDone].done = true
+            // } else {
+            //     this.todos[currentDone].done = false
+            // }
+
+            this.todos[currentDone].done = !this.todos[currentDone].done
+         
         }
+
     }
 
 })

@@ -19,7 +19,7 @@ const app = new Vue ({
             },
         ],
 
-        counter : 0,
+        counterItemsCompleted : 0,
     },
 
     methods:{
@@ -27,10 +27,9 @@ const app = new Vue ({
         removeItem: function(currentItem) {
             console.log(this.todos[currentItem].done)
             if (!this.todos[currentItem].done) {
-                this.counter--;
+                this.counterItemsCompleted--;
             }
             this.todos.splice((currentItem), 1)
-            console.log(this.counter)
         },
 
         newItemToPush: function(itemToPush){
@@ -44,7 +43,7 @@ const app = new Vue ({
                 
                 this.newItem = '';
 
-                this.counter++;
+                this.counterItemsCompleted++;
             }
         },
 
@@ -53,13 +52,10 @@ const app = new Vue ({
             this.todos[currentItem].done = !this.todos[currentItem].done;
 
             if (this.todos[currentItem].done) {
-                this.counter--;
+                this.counterItemsCompleted--;
             } else {
-                this.counter++;
+                this.counterItemsCompleted++;
             }
-            
-            
-            console.log(this.counter)
          
         },
 
@@ -67,9 +63,8 @@ const app = new Vue ({
 
             for (let i = 0; i < this.todos.length; i++) {
                 if (this.todos[i].done == false){
-                    this.counter++;
+                    this.counterItemsCompleted++;
                 }
-                console.log(this.counter)
             }
         }
 

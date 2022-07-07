@@ -34,7 +34,7 @@
                     <h1 class="text-center">My List Items</h1>
                     <div class="d-flex justify-content-end">
                         <span class="m-2">Items: <strong>{{todos.length}}</strong></span>
-                        <span class="m-2" @click="complTodos">Completed: <strong>{{todos.length - counter}}</strong></span>
+                        <span class="m-2" @click="complTodos">Completed: <strong>{{todos.length - counterItemsCompleted}}</strong></span>
                     </div>
                     <h3 v-if="todos.length == 0" class="text-center text-secondary">Empty list...</h3>
                     <ul class="list-group">

@@ -17,14 +17,20 @@ const app = new Vue ({
                 text: 'Fare il bucato',
                 done: false
             },
-        ]
+        ],
+
+        counter : 0,
     },
 
     methods:{
 
         removeItem: function(currentItem) {
-            console.log(currentItem)
+            console.log(this.todos[currentItem].done)
+            if (!this.todos[currentItem].done) {
+                this.counter--;
+            }
             this.todos.splice((currentItem), 1)
+            console.log(this.counter)
         },
 
         newItemToPush: function(itemToPush){
@@ -37,16 +43,41 @@ const app = new Vue ({
                 })
                 
                 this.newItem = '';
+
+                this.counter++;
             }
         },
 
         toggleDone: function(currentItem) {
 
-            this.todos[currentItem].done = !this.todos[currentItem].done
+            this.todos[currentItem].done = !this.todos[currentItem].done;
+
+            if (this.todos[currentItem].done) {
+                this.counter--;
+            } else {
+                this.counter++;
+            }
+            
+            
+            console.log(this.counter)
          
+        },
+
+        complTodos: function() {
+
+            for (let i = 0; i < this.todos.length; i++) {
+                if (this.todos[i].done == false){
+                    this.counter++;
+                }
+                console.log(this.counter)
+            }
         }
 
     },
+
+    created(){
+        this.complTodos();
+    }
 
 
 })
